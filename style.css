@@ -29,3 +29,58 @@
     background-color: #2e04aa;
     color: white;
   }
+  /* Styling Sandwich Layers */
+  .sandwich {
+    background-color: #e1de17;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 10px 0;
+  }
+  .bread-top {
+    background-color: #f8af6c;
+    height: 50px;
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 10px 0;
+  }
+  .lettuce {
+    height: 25px;
+    width: 50%;
+    background-color: lightgreen;
+    border-radius: 50%;
+    display: inline-block;
+    }
+  .cheese {
+  height: 25px;
+  width: 50%;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  }
+  .meat {
+    background-color: darkred;
+    height: 40px;
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 10px 0;
+  }
+  .tomato {
+  height: 25px;
+  width: 50%;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  }
+  .bread-bottom {
+    background-color: #f8af6c;
+    height: 50px;
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 10px 0;
+  }
+  
