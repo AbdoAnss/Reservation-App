@@ -1,6 +1,11 @@
 ## Web Dev Project
-This is a school project that consists of making a sandwich maker using basic web dev concepts such as:
+This is a school project that consists of basic dashboard app using basic web dev concepts such as:
 - HTML.
-- CSS.
+- CSS and/or Bootstrap CSS.
 - Vanilla JS.
-* With Node.js
+*With Node.js in backend.*
+
+The app consists of:
+- Login Screen.
+- User info page.
+- A simple dashboard.

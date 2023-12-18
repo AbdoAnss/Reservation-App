@@ -2,69 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="res/images/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="res/images/favicon.ico">
-    <title>Sandwich Maker</title>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="res/css/style.css">
 </head>
 <body>
-    <div class="topnav">
-        <a class="active" href="#home"><img src="res/images/favicon.ico" alt="logo" width="14" height="14"></a>
-        <a class="active" href="#home">Home</a>
-        <a href="#about">About</a>
-      </div>
-      <!-- form to select burger topings without using php -->
-        <form action="/submit" method="post">
-            <div class="container">
-                <h1>Sandwich Maker</h1>
-                <p>Make your own sandwich</p>
-                <hr>
-                <label for="bread">Bread</label>
-                <select name="bread" id="bread">
-                    <option value="white">White</option>
-                    <option value="brown">Brown</option>
-                    <option value="wholemeal">Wholemeal</option>
-                </select>
-                <label for="meat">Meat</label>
-                <select name="meat" id="meat">
-                    <option value="chicken">Chicken</option>
-                    <option value="beef">Beef</option>
-                    <option value="pork">Pork</option>
-                </select>
-                <label for="cheese">Cheese</label>
-                <select name="cheese" id="cheese">
-                    <option value="cheddar">Cheddar</option>
-                    <option value="swiss">Swiss</option>
-                    <option value="american">American</option>
-                </select>
-                <label for="lettuce">Lettuce</label>
-                <select name="lettuce" id="lettuce">
-                    <option value="iceberg">Iceberg</option>
-                    <option value="romaine">Romaine</option>
-                    <option value="spinach">Spinach</option>
-                </select>
-                <label for="tomato">Tomato</label>
-                <select name="tomato" id="tomato">
-                    <option value="roma">Roma</option>
-                    <option value="cherry">Cherry</option>
-                    <option value="beefsteak">Beefsteak</option>
-                </select>
-                <hr>
-                <button type="submit" class="registerbtn">Submit</button>
-            </div>
+    <script src="res/js/script.js"></script>
 
-    
+    <div class="login-container">
+    <h2>Login</h2>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
 
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-      <!-- Sandwich layers -->
-    <div class="Sandwich" id="Sandwich">
-        <div class="bread-top"></div>
-        <div class="lettuce"></div>
-        <div class="meat"></div>
-        <div class="cheese"></div>
-        <div class="tomato"></div>
-        <div class="bread-bottom">
+        <button type="button" onclick="alert('Login button clicked!')">Login</button>
+    </form>
     </div>
-    
+
 </body>
 </html>
