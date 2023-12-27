@@ -1,0 +1,12 @@
+{
+  "name": "web_project",
+  "version": "1.0.0",
+  "description": "This is a school project that consists of basic dashboard app using basic web dev concepts such as: - HTML. - CSS and/or Bootstrap CSS. - Vanilla JS. *With Node.js in backend.*",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdessamad ANSSEM",
+  "license": "ISC"
+}
