@@ -1,0 +1,243 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Global styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: green;
+    color: #fff;
+    margin-left: 280px;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #eee;
+  display: block;
+  padding: 20px;
+  height: 100%;
+  width: 250px;
+  position: fixed; /* Make the sidebar fixed */
+  top: 0;
+  left: 0;
+}
+.sidebar.active {
+    display: none; 
+}
+
+.sidebar-content {
+    text-align: center;
+}
+
+.sidebar h2 {
+    color: #333;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+/* Body style */
+.main-content {
+    margin-left: 280px; /* Move the main content to the right */
+  }
+
+/* Welcome section */
+  .welcome-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+  }
+  
+  .welcome-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-text {
+    line-height: 1.5;
+    color: #666;
+    text-align: justify;
+  }
+  
+  /* Newsletter section */
+  .newsletter-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-top: 2rem;
+  }
+  
+  .newsletter-heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter-text {
+    line-height: 1.5;
+    color: #666;
+  }
+  
+  .newsletter-signup {
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  .newsletter-signup label {
+    width: 150px;
+    text-align: right;
+    margin-right: 1rem;
+  }
+  
+  .newsletter-signup input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    flex: 1;
+  }
+  
+  .newsletter-signup button {
+    padding: 0.5rem 1rem;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Explore text */
+  .explore-text {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  
+  /* Additional styles you can consider adding: */
+  
+  .newsletter-signup button:hover {
+    background-color: rgb(3, 36, 3);
+  }
+  
+  .explore-text a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Use media queries to adapt the layout for different screen sizes */
+  
+  @media (max-width: 800px) {
+    .welcome-section, .newsletter-section {
+      padding: 1rem;
+    }
+    .newsletter-signup label {
+      width: 100px;
+    }
+    .sidebar{
+        /* display: none; */
+        width: 0; /* Hide the sidebar content */
+        position: fixed; /* Keep it fixed on the left */
+        top: 0;
+        left: 0;
+    }
+    .sidebar-content{
+        display: none;
+    }
+    .main-content, .navbar{
+        margin-left: 1cm; /* Move the main content to the right */
+    }
+  }
+
+
+
+/* Footer styles */
+.footer {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    background-color: green;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+
+
+.toggleButton {
+    /* General styling */
+    position: relative;
+    left: 0%;
+    margin-left: 14px;
+    color: #ddd;
+    display: inline-block; /* Ensure proper layout */
+    padding: 10px 15px; /* Add some padding for a comfortable click area */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 5px; /* Round the corners for a softer look */
+    background-color: green; /* Set a light background color */
+    cursor: pointer; /* Indicate interactivity */
+  
+    /* Font and text styles */
+    font-family: sans-serif; /* Use a clean font */
+    font-size: 16px; /* Ensure readability */ 
+    text-align: center; /* Center the text within the button */
+  
+    /* Hover effect */
+    &:hover {
+      background-color: #ddd; /* Lighten the background on hover */
+      color: #333;
+    }
+  }
+  
+  

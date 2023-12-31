@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <button id="toggleSidebar" class="toggleButton">click to toggle the sidebar</button>
+    <div class="container">
+        <a href="#" class="navbar-brand">Dashboard</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Settings</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Profile</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="content-container">
+        
+        <aside class="sidebar">
+            
+            <div class="sidebar-content">
+                
+                <h2>Sidebar</h2>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
+<div class="container main-content">
+    <section class="welcome-section">
+        <h2 class="welcome-heading">Welcome to your Dashboard!</h2>
+        <p class="welcome-text">
+          Here's your personal hub for insights, control, and progress. Dive into data-driven decision making, manage settings with ease, and track your achievements at a glance. Your dashboard is designed to empower you, inform you, and keep you on top of your game.
+        </p>
+       </section>
+       
+       <section class="newsletter-section">
+        <h3 class="newsletter-heading">Stay In the Know:</h3>
+        <p class="newsletter-text">
+          Never miss a beat with our informative newsletter. Get exclusive updates, valuable resources, and expert tips delivered straight to your inbox. Sign up below and stay ahead of the curve!
+        </p>
+       
+        <form class="newsletter-signup" action="your_signup_action.php" method="post">
+          <label for="email">Your Email Address:</label>
+          <input type="email" id="email" name="email" required>
+          <button type="submit">Subscribe Now!</button>
+        </form>
+    </section>
+       
+       <p class="explore-text">
+        Ready to explore? Head over to the sidebar and discover the wealth of tools and information available at your fingertips. We're excited to see what you achieve!
+       </p>
+       
+
+
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2023 ASEDS INPT</p>
+    </div>
+</footer>
+
+<script src="/dash.js"></script>
+</body>
+</html>
