@@ -11,7 +11,8 @@ This project showcases a simple web dashboard application created during a schoo
     - CSS for styling elements (optionally utilizing Bootstrap for pre-built components)
     - JavaScript for adding interactivity and dynamic behavior
 - **Backend Framework:**
-    - Node.js for server-side logic and data management
+    - Node.js for server-side logic and data management.
+    - MySQL for data management.
 
 **Key Features:**
 
@@ -29,7 +30,7 @@ This project showcases a simple web dashboard application created during a schoo
 **Getting Started:**
 
 1. Clone this repository to your local machine.
-2. Install required dependencies: `npm install nodejs nodemon mongoose mongodb express body-parser `
+2. Install required dependencies: `npm install nodejs nodemon mysql express hbs path `
 3. Start the development server: `npm start`
 4. Access the application in your web browser, typically at `http://localhost:3000`
 
