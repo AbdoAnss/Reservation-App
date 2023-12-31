@@ -4,9 +4,17 @@
   "description": "This is a school project that consists of basic dashboard app using basic web dev concepts such as: - HTML. - CSS and/or Bootstrap CSS. - Vanilla JS. *With Node.js in backend.*",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Abdessamad ANSSEM",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.0.2",
+    "path": "^0.12.7"
+  }
 }
