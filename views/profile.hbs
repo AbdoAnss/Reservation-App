@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="profile.css">
+  <title>User Profile</title>
+</head>
+<body>
+
+  <h2>User Profile</h2>
+
+  <form id="profileForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="Ahmed77777" disabled>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" value="********" disabled>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="Ahmed77777@test.com" disabled>
+
+    <button type="button" onclick="editProfile()">Edit Profile</button>
+    <button type="submit" id="saveBtn" disabled>Save Changes</button>
+  </form>
+
+  <script>
+    function editProfile() {
+      // Enable editing of fields and the save button
+      document.getElementById('username').removeAttribute('disabled');
+      document.getElementById('password').removeAttribute('disabled');
+      document.getElementById('email').removeAttribute('disabled');
+      document.getElementById('saveBtn').removeAttribute('disabled');
+    }
+  </script>
+
+</body>
+</html>

@@ -36,11 +36,11 @@
   <main>
     <h1>Settings</h1>
 
-    <form id="settingsForm">
+    <form id="settingsForm" class="settingsForm">
       <fieldset>
         <legend>Account Information</legend>
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="Current Username"><br>
+        <input type="text" id="username" name="username" value="username"><br>
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password"><br>
@@ -48,14 +48,6 @@
         <label for="passwordConfirmation">Confirm Password:</label>
         <input type="password" id="passwordConfirmation" name="passwordConfirmation"><br>
       </fieldset>
-
-      <fieldset>
-        <legend>Profile Photo</legend>
-        <img id="profilePhoto" src="current_photo.jpg" alt="Profile Photo">
-        <label for="photoUpload">Upload New Photo:</label>
-        <input type="file" id="photoUpload" name="photoUpload"><br>
-      </fieldset>
-
       <button type="submit">Save Changes</button>
     </form>
   </main>

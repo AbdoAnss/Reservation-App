@@ -63,21 +63,22 @@ exports.register = (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        const {loginemail, loginpassword} = req.body;
+        const {loginusername, loginpassword} = req.body;
 
-        if(!loginemail || !loginpassword){
-            return res.status(400).render('login', {
+        if(!loginusername || !loginpassword){
+            return res.status(400).render('register', {
                 message: 'Please provide an email and password'
             })
         }
 
-        db.query('SELECT * FROM users WHERE email = ?', [loginemail], async (error, results) => {
+        db.query('SELECT * FROM users WHERE username = ?', [loginusername], async (error, results) => {
             console.log(results);
             if(!results || !(await bcrypt.compare(loginpassword, results[0].password))){
-                res.status(401).render('login', {
+                res.status(401).render('register', {
                     message: 'Email or password is incorrect'
                 })
             } else {
+
                 const id = results[0].id;
                 const token = jwt.sign({id}, process.env.JWT_SECRET, {
                     expiresIn: process.env.JWT_EXPIRES_IN
@@ -90,7 +91,6 @@ exports.login = async (req, res) => {
                     ),
                     httpOnly: true
                 }
-
                 res.cookie('jwt', token, cookieOptions);
                 res.status(200).redirect("/dashboard");
             }

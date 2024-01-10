@@ -223,3 +223,50 @@ body {
   button:hover{
     background-color: rgb(218, 207, 15);
   }
+
+  /* Apply basic styles to the form */
+.settingsForm {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Style the fieldset and legend */
+  fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  legend {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  /* Style labels and input fields */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Style the submit button */
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

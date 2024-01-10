@@ -9,6 +9,10 @@ router.get("/", (req, res) => {
     res.render('index');
 });
 
+router.get("/login", (req, res) => {
+    res.render('Register');
+});
+
 router.get("/register", (req, res) => {
     res.render('Register');
 });
@@ -24,4 +28,14 @@ router.get("/settings", (req, res) => {
 router.get("/about-us", (req, res) => {
     res.render('about');
 });
+
+router.get("/arena", (req, res) => {
+    res.render('reserv');
+});
+
+router.get("/profile", (req, res) => {
+    res.render('profile');
+});
+
+
 module.exports = router;
