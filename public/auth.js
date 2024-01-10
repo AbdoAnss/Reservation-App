@@ -23,4 +23,24 @@ function toggleForm() {
     }
   }
 
+  function validateForm() {
+    var password = document.getElementById("signup-password").value;
+    var confirmPassword = document.getElementById("confirm-password").value;
+
+// Si on veut faire une vérification de mot de passe dans le front-end, il faut utiliser le code ci-dessous:
+
+    // if (password !== confirmPassword) {
+    //   alert("Passwords do not match. Please check and try again.");
+    //   return false; // Prevent form submission
+    // } else if (password === "" || confirmPassword === "") {
+    //   alert("Passwords cannot be empty. Please check and try again.");
+    //   return false; // Prevent form submission
+    // } else if (password.length < 8 || confirmPassword.length < 8) {
+    //   alert("Passwords must be at least 8 characters long. Please check and try again.");
+    //   return false; // Prevent form submission
+    // }
+
+    return true; // Allow form submission
+  }
+
 //

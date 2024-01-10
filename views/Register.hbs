@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/res/images/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="/auth.css">
+</head>
+<body>
+    
+
+    <div class="form-container">
+        <h2 id="form-title">Login</h2>
+      
+        <div class="container" id="login-form">
+          <form action="/auth/login" method="post">
+            <label for="login-username">Username:</label>
+            <input class="input" type="text" id="login-username" name="login-username" required>
+      
+            <label for="login-password">Password:</label>
+            <input class="input" type="password" id="login-password" name="login-password" required>
+      
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      
+        <div class="container" id="signup-form" style="display: none;">
+          <form action="/auth/register" method="post" onsubmit="return validateForm()">
+            <label for="signup-username">Username:</label>
+            <input class="input" type="text" id="signup-username" name="signupusername" required>
+            <label for="signup-username">Email:</label>
+            <input class="input" type="email" id="signup-email" name="signupemail" required>
+      
+            <label for="signup-password">Password:</label>
+            <input class="input" type="password" id="signup-password" name="signuppassword" required>
+      
+            <label for="confirm-password">Confirm Password:</label>
+            <input class="input" type="password" id="confirm-password" name="confirmpassword" required>
+            <button type="submit" class="signup-button" >Signup</button>
+          </form>
+        </div>
+    </div>
+
+    <div class="Switch">
+      <button class="button" onclick="toggleForm()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+          <path d="M11.354 8.354a.5.5 0 0 0 0-.708l-7-7a.5.5 0 1 0-.708.708L9.293 8l-6.647 6.646a.5.5 0 1 0 .708.708l7-7z"/>
+        </svg>
+        Switch to <span id="formTitle">Signup</span>
+      </button>
+    </div>
+
+    {{#if message}}
+    <div class="error"> {{message}} </div>
+    {{/if}}
+    
+    {{#if success}}
+    <div class="success"> {{success}} </div>
+    {{/if}}
+    
+      
+      <script src="/auth.js"></script>
+
+    
+
+</body>
+</html>
+

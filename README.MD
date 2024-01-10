@@ -30,7 +30,7 @@ This project showcases a simple web dashboard application created during a schoo
 **Getting Started:**
 
 1. Clone this repository to your local machine.
-2. Install required dependencies: `npm install nodejs nodemon mysql express hbs path `
+2. Install required dependencies: `npm install nodejs nodemon mysql express ejs `
 3. Start the development server: `npm start`
 4. Access the application in your web browser, typically at `http://localhost:3000`
 

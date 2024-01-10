@@ -1,0 +1,225 @@
+/* General styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light gray background */
+  }
+
+  /* Navbar styles */
+.navbar {
+    background-color: green;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 20px 20px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5em;
+  color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+  }
+  .navbar-nav:hover {
+    background-color: darkgreen;
+  
+  }
+  
+  
+  .nav-item {
+    margin-right: 20px;
+    list-style: none;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  
+  
+  .navbar-brand {
+      font-size: 1.5em;
+      color: #fff;
+      text-decoration: none;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  
+  .nav-item {
+    
+      display: inline-block;
+      margin-right: 20px;
+      
+  }
+  
+  
+  .nav-link {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+  }
+  
+  
+  /* nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav li {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+  } */
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  section {
+    border-radius: 15px;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Light gray border */
+  }
+  
+  h1, h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light gray background */
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+    }
+    section {
+      width: 100%;
+    }
+  }
+  
+  form {
+    /* General form styling */
+    width: 300px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  label {
+    display: block; /* Each label on a separate line */
+    margin-bottom: 5px; /* Spacing between labels and inputs */
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%; /* Full width input fields */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px; /* Rounded corners */
+    margin-bottom: 10px; /* Spacing between fields */
+    box-sizing: border-box; /* Ensure consistent sizing */
+  }
+  
+  textarea {
+    resize: none; /* Prevent resizing */
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the button */
+  button[type="submit"]:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+
+    margin-top: 5px;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .suggestion::before {
+    content: '🌟'; /* You can change this emoji to your preference */
+    margin-right: 5px; /* Adjust the spacing as needed */
+  }
+  
+  .suggestion {
+    color: #888; /* Adjust the color as needed */
+    font-style: italic;
+  }
+  
+  .center{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
+
+  button{
+    background-color: yellow;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color: rgb(218, 207, 15);
+  }
