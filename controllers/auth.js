@@ -1,6 +1,8 @@
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const {promisify} = require("util");
+
 
 
 const db = mysql.createConnection({
@@ -83,6 +85,7 @@ exports.login = async (req, res) => {
                 const token = jwt.sign({id}, process.env.JWT_SECRET, {
                     expiresIn: process.env.JWT_EXPIRES_IN
                 });
+                
                 console.log("The token is: " + token);
 
                 const cookieOptions = {
@@ -99,4 +102,138 @@ exports.login = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+}
+
+exports.isLoggedIn = async (req, res, next) => {
+    // console.log(req.cookies);
+    if( req.cookies.jwt) {
+      try {
+        //1) verify the token
+        const decoded = await promisify(jwt.verify)(req.cookies.jwt,
+        process.env.JWT_SECRET
+        );
+  
+        console.log(decoded);
+  
+        //2) Check if the user still exists
+        db.query('SELECT * FROM users WHERE id = ?', [decoded.id], (error, result) => {
+          
+          console.log(result);
+  
+          if(!result) {
+            return next();
+          }
+  
+          req.user = result[0];
+          console.log("user is")
+          console.log(req.user);
+          return next();
+  
+        });
+      } catch (error) {
+        console.log(error);
+        return next();
+      }
+    } else {
+      next();
+    }
+  }
+
+exports.reserv = (req, res) => {
+    if (req.cookies.jwt) {
+        jwt.verify(req.cookies.jwt, process.env.JWT_SECRET, (error, decoded) => {
+            if (error) {
+                console.log(error);
+                // Handle the error, e.g., redirect to login page
+                return res.redirect('/login');
+            }
+
+            const { reservname, date, time, guests } = req.body;
+            console.log(req.body);
+
+            db.query('INSERT INTO reservations SET ?', { name: reservname, date, time, guests, userID: decoded.id }, (error, results) => {
+                if (error) {
+                    console.log(error);
+                    // Handle the error, e.g., render an error page
+                    return res.render('error', { error: 'Error making reservation' });
+                } else {
+                    console.log(results);
+                    return res.render('dashboard', {
+                        success: 'Reservation made'
+                    });
+                }
+            });
+        });
+    } else {
+        // Handle the case where there is no JWT cookie, e.g., redirect to login page
+        res.redirect('/login');
+    }
+};
+
+exports.userReservations = (req, res) => {
+    if (req.cookies.jwt) {
+        jwt.verify(req.cookies.jwt, process.env.JWT_SECRET, (error, decoded) => {
+            if (error) {
+                console.log(error);
+                // Handle the error, e.g., redirect to login page
+                return res.redirect('/login');
+            }
+
+            db.query('SELECT * FROM reservations WHERE userID = ?', [decoded.id], (error, results) => {
+                if (error) {
+                    console.log(error);
+                    // Handle the error, e.g., render an error page
+                    return res.render('error', { error: 'Error getting reservations' });
+                } else {
+                    console.log(results);
+                    return res.render('reserv', {
+                        reservations: results
+                    });
+                }
+            });
+        });
+    } else {
+        // Handle the case where there is no JWT cookie, e.g., redirect to login page
+        res.redirect('/login');
+    }
+};
+
+exports.deleteReservation = (req, res) => {
+    if (req.cookies.jwt) {
+        jwt.verify(req.cookies.jwt, process.env.JWT_SECRET, (error, decoded) => {
+            if (error) {
+                console.log(error);
+                // Handle the error, e.g., redirect to login page
+                return res.redirect('/login');
+            }
+
+            const { id } = req.body;
+            console.log(req.body);
+
+            db.query('DELETE FROM reservations WHERE reservationID = ?', [id], (error, results) => {
+                if (error) {
+                    console.log(error);
+                    // Handle the error, e.g., render an error page
+                    return res.render('error', { error: 'Error deleting reservation' });
+                } else {
+                    console.log(results);
+                    return res.render('dashboard', {
+                        success: 'Reservation deleted'
+                    });
+                }
+            });
+        });
+    } else {
+        // Handle the case where there is no JWT cookie, e.g., redirect to login page
+        res.redirect('/login');
+    }
+}
+
+
+exports.logout = async (req, res) => {
+    res.cookie('jwt', 'logout', {
+        expires: new Date(Date.now() +2*1000),
+        httpOnly: true
+    });
+    res.status(200).redirect('/');
 }

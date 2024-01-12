@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="profile.css">
-  <title>User Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>User Profile</title>
 </head>
 <body>
 
-  <h2>User Profile</h2>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/arena">Arena</a></li>
+            <li><a href="/settings">Settings</a></li>
+        </ul>
+    </nav>
+</header>
 
-  <form id="profileForm">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" value="Ahmed77777" disabled>
+<div class="profile-container">
+    <div class="profile-picture">
+        <!-- User profile picture will be displayed here -->
+        <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Profile Picture">
+    </div>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" value="********" disabled>
+    <div class="user-details">
+        <!-- User details will be populated here -->
+        <h2>User: {{user.username}}</h2>
+        <p>Email: {{user.email}}</p>
+        <p>Your ID is: {{user.id}} </p>
+        <p>Location: Agadir, Morocco</p>
+        <!-- Add more details as needed -->
+    </div>
+    <div class="badges">
+        <!-- Display user badges and achievements here -->
+        <h3>Badges & Achievements</h3>
+        <ul>
+            <li>Good Customer</li>
+            <li>Customer of the year!</li>
+            <!-- Add more badges as needed -->
+        </ul>
+    </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" value="Ahmed77777@test.com" disabled>
+    <div class="feedback">
+        <!-- Feedback section -->
+        <h3>Feedback</h3>
+        <!-- Add a form or display feedback/comments here -->
+    </div>
 
-    <button type="button" onclick="editProfile()">Edit Profile</button>
-    <button type="submit" id="saveBtn" disabled>Save Changes</button>
-  </form>
+    <div class="social-media-links">
+        <!-- Social media links -->
+        <h3>Connect with Me</h3>
+        <ul>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <!-- Add more social media links as needed -->
+        </ul>
+    </div>
 
-  <script>
-    function editProfile() {
-      // Enable editing of fields and the save button
-      document.getElementById('username').removeAttribute('disabled');
-      document.getElementById('password').removeAttribute('disabled');
-      document.getElementById('email').removeAttribute('disabled');
-      document.getElementById('saveBtn').removeAttribute('disabled');
-    }
-  </script>
+</div>
+
+<footer>
+    <p>&copy; 2024 ASEDS INPT.</p>
+</footer>
 
 </body>
 </html>

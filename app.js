@@ -4,6 +4,8 @@ const mysql = require("mysql");
 // secure code best practice (dotenv package is used to hide sensitive data)
 const dotenv = require("dotenv");
 
+const cookieParser = require("cookie-parser");
+
 // secure coding best practice
 dotenv.config({path:"./.env"});
 
@@ -36,12 +38,26 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 
+// setting up cookie parser
+app.use(cookieParser());
+
+
+
+
 // setting up view engine
 app.set('view engine', 'hbs');
 
 // setting up routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+
+app.get('/auth/dash.css', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/dash.css'));
+});
+
+app.get('/auth/reserv.css', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/reserv.css'));
+});
 
 
 // setting up server

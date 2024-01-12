@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
-// const path = require("path");
-// const mysql = require("mysql");
+const authController = require("../controllers/auth");
 
 
 
-router.get("/", (req, res) => {
-    res.render('index');
+
+//  1ere zone accesible par tous
+router.get("/", authController.isLoggedIn,(req, res) => {
+    res.render('index', {
+        user: req.user
+    });
 });
 
 router.get("/login", (req, res) => {
@@ -16,26 +19,60 @@ router.get("/login", (req, res) => {
 router.get("/register", (req, res) => {
     res.render('Register');
 });
-
-router.get("/dashboard", (req, res) => {
-    res.render('dashboard');
+router.get("/about-us",authController.isLoggedIn ,(req, res) => {
+    res.render('about', {
+        user: req.user
+     });
 });
 
-router.get("/settings", (req, res) => {
-    res.render('settings');
+
+
+// 2eme zone accesible par les utilisateurs connectés
+
+router.get("/dashboard", authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('dashboard', {
+            user: req.user
+        });
+    }
+    else {
+        res.redirect("/login");
+    }
 });
 
-router.get("/about-us", (req, res) => {
-    res.render('about');
+router.get("/settings",authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('settings', {
+            user: req.user
+        });
+    }
+    else {
+        res.redirect("/login");
+    }
+});
+router.get("/arena",authController.isLoggedIn,authController.userReservations, (req, res) => {
+    if (req.user && req.reservations) {
+        res.render('reserv', {
+            user: req.user,
+            reservations: req.reservations
+        });
+    }
+    else {
+        res.redirect("/login");
+    }
+    
+});
+router.get("/profile", authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('profile', {
+            user: req.user
+        });
+    }else {
+        res.redirect("/login");
+    }
 });
 
-router.get("/arena", (req, res) => {
-    res.render('reserv');
-});
 
-router.get("/profile", (req, res) => {
-    res.render('profile');
-});
 
 
 module.exports = router;
