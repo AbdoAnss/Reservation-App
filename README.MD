@@ -65,7 +65,7 @@ Make sure you have the following installed on your machine:
 - **Secure Login Screen:** Protects user accounts with authentication.
 - **User Information Page:** Displays essential user details.
 - **Simple Dashboard:** Presents key information and potential for further development.
-- **Reservation page:** Where custommers can make & manage their reservations.
+- **Reservation page:** Where customers can make & manage their reservations.
 
 ## Usage
 
