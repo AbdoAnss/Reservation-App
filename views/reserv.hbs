@@ -70,7 +70,7 @@
           <td>{{this.guests}}</td>
           <td>
             <form action="/auth/deleteReservation" method="post">
-              <input type="hidden" name="reservationID" value="{{this._id}}">
+              <input type="hidden" name="reservationID" value="{{this.reservationID}}">
               <button style="background-color: lightcoral;" type="submit">Delete</button>
             </form>
           </td>

@@ -1,6 +1,6 @@
 const express= require("express");
 const path = require("path");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 // secure code best practice (dotenv package is used to hide sensitive data)
 const dotenv = require("dotenv");
 
@@ -59,8 +59,13 @@ app.get('/auth/reserv.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/reserv.css'));
 });
 
+app.get('/auth/profile.css', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/profile.css'));
+});
+
 
 // setting up server
 app.listen(PORT,()=>{
+    console.log(__dirname);
     console.log(`Server is running on PORT: ${PORT}`)
 });

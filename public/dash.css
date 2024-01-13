@@ -278,7 +278,7 @@ color: #fff;
     }
   }
   
-  .error {
+.error {
     color: #ff0000; /* Red text color */
     background-color: #ffe6e6; /* Light red background color */
     border: 1px solid #ff0000; /* Red border */
@@ -293,4 +293,15 @@ color: #fff;
     padding: 10px; /* Padding around the content */
     margin: 10px 0; /* Margin above and below the element */
     border-radius: 5px; /* Rounded corners */
+}
+
+
+.action-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+.action-container:hover{
+    background-color: #eee;
 }

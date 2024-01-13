@@ -20,19 +20,46 @@
 </header>
 
 <div class="profile-container">
+    
+    <div class="action-container">
+
+    {{#if error}}
+    <h2>Action made:</h2>
+    <div class="error"> {{error}} </div>
+    {{/if}}
+
+    {{#if success}}
+    <h2>Action made:</h2>
+    <div class="success"> {{success}} </div>
+    {{/if}}
+
+    </div>
+    
+    
+    
+    
     <h1>Settings</h1>
 
-    <form id="settingsForm" class="user-details">
+
+
+
+    <form id="settingsForm" class="user-details" action="/auth/modify-user" method="POST">
       <fieldset>
         <legend>Account Information</legend>
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="username"><br>
+        <input type="text" id="username" name="username" value="{{user.username}}"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{user.email}}"><br>
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password"><br>
 
         <label for="passwordConfirmation">Confirm Password:</label>
         <input type="password" id="passwordConfirmation" name="passwordConfirmation"><br>
+
+        <label for="profileimg">Insert a profile image:</label>
+        <input type="file" id="profileimg" name="profileimg"><br>
       </fieldset>
       <button type="submit">Save Changes</button>
     </form>

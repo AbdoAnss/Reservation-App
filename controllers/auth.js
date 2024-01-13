@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const {promisify} = require("util");
@@ -151,11 +151,11 @@ exports.reserv = (req, res) => {
             const { reservname, date, time, guests } = req.body;
             console.log(req.body);
 
-            db.query('INSERT INTO reservations SET ?', { name: reservname, date, time, guests, userID: decoded.id }, (error, results) => {
+            db.query('INSERT INTO reservations SET ?', { name: reservname,date: date, time:time, guests:guests, userID: decoded.id }, (error, results) => {
                 if (error) {
                     console.log(error);
                     // Handle the error, e.g., render an error page
-                    return res.render('error', { error: 'Error making reservation' });
+                    return res.render('dashboard', { error: 'Error making reservation' });
                 } else {
                     console.log(results);
                     return res.render('dashboard', {
@@ -169,6 +169,58 @@ exports.reserv = (req, res) => {
         res.redirect('/login');
     }
 };
+
+exports.modifyUser = async (req, res) => {
+    if (req.cookies.jwt) {
+        jwt.verify(req.cookies.jwt, process.env.JWT_SECRET, (error, decoded) => {
+            if (error) {
+                console.log(error);
+                // Handle the error, e.g., redirect to login page
+                return res.redirect('/login');
+            }
+
+            const { username, email, password, passwordConfirmation, profileimg } = req.body;
+            console.log(req.body);
+            if (password !== passwordConfirmation) {
+                return res.render('settings', {
+                    error: 'Passwords do not match'
+                })
+            } else if (password.length < 8) {
+                return res.render('settings', {
+                    error: 'Password must be at least 8 characters long'
+                })
+            }
+
+            let hashedPassword = bcrypt.hash(password, 8);
+            console.log(hashedPassword);
+
+
+            db.query('UPDATE users SET username = ?, email = ?, password = ?, img = ? WHERE id = ?', [username, email, hashedPassword, profileimg, decoded.id], (error, results) => {
+                if (error) {
+                    console.log(error);
+                    // Handle the error, e.g., render an error page
+                    return res.render('settings', { error: 'Error updating user' });
+                } else {
+                    console.log(results);
+                    return res.render('settings', {
+                            sucess: 'User updated'
+                        })
+                }
+            }
+            );
+        });
+    } else {
+        // Handle the case where there is no JWT cookie, e.g., redirect to login page
+        res.redirect('/login');
+    }
+};
+
+
+
+
+
+
+
 
 exports.userReservations = (req, res) => {
     if (req.cookies.jwt) {
@@ -207,10 +259,10 @@ exports.deleteReservation = (req, res) => {
                 return res.redirect('/login');
             }
 
-            const { id } = req.body;
+            const { reservationID } = req.body;
             console.log(req.body);
 
-            db.query('DELETE FROM reservations WHERE reservationID = ?', [id], (error, results) => {
+            db.query('DELETE FROM reservations WHERE reservationID = ?', [reservationID], (error, results) => {
                 if (error) {
                     console.log(error);
                     // Handle the error, e.g., render an error page
@@ -228,6 +280,8 @@ exports.deleteReservation = (req, res) => {
         res.redirect('/login');
     }
 }
+
+
 
 
 exports.logout = async (req, res) => {

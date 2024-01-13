@@ -54,15 +54,23 @@
     </div>
 </div>
 <div class="container main-content">
-    <button id="toggleSidebar" class="toggleButton"><=</button>
+    <button id="toggleSidebar" class="toggleButton">Toggle side bar</button>
+
+<div class="action-container">
 
     {{#if message}}
+    <h2>Action made:</h2>
     <div class="error"> {{message}} </div>
     {{/if}}
 
     {{#if success}}
+    <h2>Action made:</h2>
     <div class="success"> {{success}} </div>
     {{/if}}
+
+</div>
+
+    
     <section class="welcome-section">
         <h2 class="welcome-heading">Welcome to your Dashboard! {{user.username}} </h2>
         <p class="welcome-text">

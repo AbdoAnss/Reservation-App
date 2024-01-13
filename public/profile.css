@@ -137,3 +137,33 @@ footer {
   text-decoration: none;
   color: #0077cc; /* Change the color to match your design */
 }
+
+
+.action-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.action-container:hover{
+  background-color: #eee;
+}
+
+
+.success {
+  color: #008000; /* Green text color */
+  background-color: #d3f7d3; /* Light green background color */
+  border: 1px solid #008000; /* Green border */
+  padding: 10px; /* Padding around the content */
+  margin: 10px 0; /* Margin above and below the element */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.error {
+  color: #ff0000; /* Red text color */
+  background-color: #ffe6e6; /* Light red background color */
+  border: 1px solid #ff0000; /* Red border */
+  padding: 10px; /* Padding around the content */
+  margin: 10px 0; /* Margin above and below the element */
+  border-radius: 5px; /* Rounded corners */
+}
