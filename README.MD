@@ -49,7 +49,7 @@ Make sure you have the following installed on your machine:
 
 1. Clone the repository:
 
-   ```bash
+   ```git
    git clone https://github.com/AbdoAnss/Simple-app.git
    ````
 2. cd into the project:
